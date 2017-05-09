@@ -1,0 +1,70 @@
+.folder-list {
+    list-style: none;
+    padding-left: 0;
+}
+.folder-list.children, .file-list {
+    margin-left: 4rem;
+}
+
+.folder > .info > .name {
+    width: 10em;
+    display: inline-block;
+}
+
+.folder.all > .info {
+    color: hsl(120,80%,35%);
+    font-weight: bold;
+}
+.folder.none > .info {
+    color:#aaa;
+}
+.folder {
+    margin:0.4rem 0;
+    display: inline-block;
+}
+.folder > .info {
+    background:#f4f4f4;
+    padding: 0.2rem 1rem;
+    display:inline-block;
+
+}
+.file-list {
+    list-style: none;
+    background: hsl(240,0%,90%);
+    padding: 0.5rem;
+}
+.file {
+    display: flex;
+}
+
+.file > .name {
+    flex: 1;
+}
+.name {
+    font-family: monospace;
+}
+.file input[type="checkbox"] {
+    display:none;
+}
+.file:not(.use) {
+    color: #aaa;
+    text-decoration: line-through;
+}
+
+main {
+    display: flex;
+}
+section {
+    flex: 1 0;
+    padding: 0 1rem;
+}
+
+.filesize.B { font-size: 0.7em; }
+.filesize.KB { font-size: 0.9em; }
+.filesize.MB { font-size: 1.3em; }
+.filesize.GB { font-size: 1.6em; }
+
+#test {
+    width: 100%;
+    margin: 1rem 0;
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+        <title>MathJax shrink-o-matic</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <script src="{{url_for('static',filename='vue.js')}}"></script>
+        <script src="{{url_for('static',filename='components.js')}}"></script>
+        <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"></link>
+    </head>
+    <body>
+        {% raw %}
+        <script type="text/x-template" id="folder">
+            <li class="folder" :class="{open:open,all:model.use=='all',some:model.use=='some',none:model.use=='none'}">
+                <div class="info">
+                    <span class="name">{{root ? '' : '/'}}{{model.name}}</span>
+                    <span v-if="!root">
+                        <label><input type="radio" value="all" v-model="model.use">All</label>
+                        <label><input type="radio" value="some" v-model="model.use">Some</label>
+                        <label><input type="radio" value="none" v-model="model.use">None</label>
+                    </span>
+                    <span class="space"><filesize :size="model.space"></filesize></span>
+                </div>
+                <ul v-if="model.dirs.length && open" class="folder-list children">
+                    <li v-for="subdir in model.dirs">
+                        <folder :model="subdir"></folder>
+                    </li>
+                </ul>
+                <ul class="file-list" v-if="open">
+                    <li v-for="file in model.files" class="file" :class="{use:file.use}">
+                        <span class="name"><label><input type="checkbox" v-model="file.use"> {{file.name}}</label></span> 
+                        <filesize :size="file.size"></filesize>
+                    </li>
+                </ul>
+            </li>
+        </script>
+
+        <main id="app">
+            <section>
+                <h2>Components</h2>
+                <ul>
+                    <li v-for="component in Object.values(components)">
+                        <label><input type="checkbox" v-model="component.include"> {{component.description}}</label>
+                    </li>
+                </ul>
+                <p><button @click="set_components">Use these components</button></p>
+
+                <p>
+                    <label>Configuration:
+                        <select v-model="config">
+                            <option v-for="file in available_configs" :value="file">{{file}}</option>
+                        </select>
+                    </label>
+                </p>
+
+                <p>Total size: <filesize :size="total_space"></filesize></p>
+                <p><button @click="compile">Compile</button>{{compile_status}}</p>
+                <p v-if="compile_status=='compiled'"><a :href="'/zips/'+compile_zipfile">Download .zip</a></p>
+                <iframe :src="'/test?config='+config+'&id='+compile_id" id="test"></iframe>
+            </section>
+            <section>
+                <p>Select the files and folders to include.</p>
+                <ul id="mathjax_files" class="folder-list">
+                    <folder name="MathJax" :model="files" root="true"></folder>
+                </ul>
+            </section>
+        </main>
+        {% endraw %}
+
+        <script>let mathjax_files = {{mathjax_files|tojson|safe}};</script>
+        <script src="{{url_for('static',filename='thing.js')}}"></script>
+    </body>
+</html>
