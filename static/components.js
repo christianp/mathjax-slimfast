@@ -1,6 +1,7 @@
 const components = {
     "unpacked": {
         "description": "Development files",
+        "help_text": "Unpacked JavaScript files used only in the development of MathJax itself.",
         "paths": {
             "unpacked": []
         }
@@ -103,7 +104,7 @@ const components = {
     },
     "eot": {
         "description": "Fonts in .eot format",
-        "help_text": "Only needed if you want to support IE < 9",
+        "help_text": "Only needed if you want to support IE < 9.",
         "paths": {
             "fonts/HTML-CSS/Asana-Math/eot": ['htmlCssOutput|commonHtmlOutput','fontAsana'],
             "fonts/HTML-CSS/Gyre-Pagella/eot": ['htmlCssOutput|commonHtmlOutput','fontGyrePagella'],
@@ -116,7 +117,7 @@ const components = {
     },
     "otf": {
         "description": "Fonts in .otf format",
-        "help_text": "Not needed if you also include .woff",
+        "help_text": "Not needed if you also include .woff.",
         "paths": {
             "fonts/HTML-CSS/Asana-Math/otf": ['htmlCssOutput|commonHtmlOutput','fontAsana'],
             "fonts/HTML-CSS/Gyre-Pagella/otf": ['htmlCssOutput|commonHtmlOutput','fontGyrePagella'],
@@ -129,7 +130,7 @@ const components = {
     },
     "png": {
         "description": "Fonts in .png format",
-        "help_text": "Fallback used if other fonts can't load",
+        "help_text": "Fallback used if other fonts can't load.",
         "paths": {
             "fonts/HTML-CSS/Asana-Math/png": ['htmlCssOutput|commonHtmlOutput','fontAsana'],
             "fonts/HTML-CSS/Gyre-Pagella/png": ['htmlCssOutput|commonHtmlOutput','fontGyrePagella'],
@@ -142,7 +143,7 @@ const components = {
     },
     "svg": {
         "description": "Fonts in .svg format",
-        "help_text": "Must include if you want to support iPhone and iPad",
+        "help_text": "Must include if you want to support Safari < 5.0 (from 2009) on iOS.",
         "paths": {
             "fonts/HTML-CSS/Asana-Math/svg": ['htmlCssOutput|commonHtmlOutput','fontAsana'],
             "fonts/HTML-CSS/Gyre-Pagella/svg": ['htmlCssOutput|commonHtmlOutput','fontGyrePagella'],
@@ -155,7 +156,7 @@ const components = {
     },
     "woff": {
         "description": "Fonts in .woff format",
-        "help_text": "Will work in every browser except on iPhone and iPad",
+        "help_text": "Will work in every browser except Safari < 5.0 (from 2010) on iOS.",
         "paths": {
             "fonts/HTML-CSS/Asana-Math/woff": ['htmlCssOutput|commonHtmlOutput','fontAsana'],
             "fonts/HTML-CSS/Gyre-Pagella/woff": ['htmlCssOutput|commonHtmlOutput','fontGyrePagella'],
@@ -294,6 +295,7 @@ const components = {
     },
     "extensionsMathml": {
         "description": "All MathML extensions",
+        "help_text": "Including the Content MathML translator.",
         "paths": {
             "extensions/MathML": ['mathmlInput'],
             "extensions/mml2jax.js": ['mathmlInput'],
@@ -303,6 +305,7 @@ const components = {
     },
     "extensionsTeX": {
         "description": "All TeX extensions",
+        "help_text": "Including the AMSmath extensions.",
         "paths": {
             "extensions/TeX": ['texInput'],
             "extensions/jsMath2jax.js": ['texInput'],
@@ -319,97 +322,9 @@ const components = {
             "unpacked/extensions/HTML-CSS": ['htmlCssOutput','unpacked']
         }
     },
-    "htmlCssOutput": {
-        "description": "HTML-CSS output",
-        "paths": {
-            "config/AM_HTMLorMML.js": ['asciimathInput','mathmlOutput'],
-            "config/MML_HTMLorMML.js": ['mathmlInput','mathmlOutput'],
-            "config/TeX-AMS-MML_HTMLorMML.js": ['texInput','mathmlInput','mathmlOutput'],
-            "config/TeX-MML-AM_HTMLorMML.js": ['texInput','mathmlInput','asciimathInput','mathmlOutput'],
-
-            "config/AM_HTMLorMML-full.js": ['asciimathInput','mathmlOutput'],
-            "config/MML_HTMLorMML-full.js": ['mathmlInput','mathmlOutput'],
-            "config/TeX-AMS-MML_HTMLorMML-full.js": ['texInput','mathmlInput','mathmlOutput'],
-            "config/TeX-MML-AM_HTMLorMML-full.js": ['texInput','mathmlInput','asciimathInput','mathmlOutput'],
-
-            "unpacked/config/AM_HTMLorMML.js": ['asciimathInput','mathmlOutput','unpacked'],
-            "unpacked/config/MML_HTMLorMML.js": ['mathmlInput','mathmlOutput','unpacked'],
-            "unpacked/config/TeX-AMS-MML_HTMLorMML.js": ['texInput','mathmlInput','mathmlOutput','unpacked'],
-            "unpacked/config/TeX-MML-AM_HTMLorMML.js": ['texInput','mathmlInput','asciimathInput','mathmlOutput','unpacked'],
-
-            "unpacked/config/AM_HTMLorMML-full.js": ['asciimathInput','mathmlOutput','unpacked'],
-            "unpacked/config/MML_HTMLorMML-full.js": ['mathmlInput','mathmlOutput','unpacked'],
-            "unpacked/config/TeX-AMS-MML_HTMLorMML-full.js": ['texInput','mathmlInput','mathmlOutput','unpacked'],
-            "unpacked/config/TeX-MML-AM_HTMLorMML-full.js": ['texInput','mathmlInput','asciimathInput','mathmlOutput','unpacked'],
-
-            "jax/output/HTML-CSS/config.js": [],
-            "jax/output/HTML-CSS/imageFonts.js": ["png"],
-            "jax/output/HTML-CSS/jax.js": [],
-            "jax/output/HTML-CSS/autoload": [],
-
-            "unpacked/jax/output/HTML-CSS/config.js": ['unpacked'],
-            "unpacked/jax/output/HTML-CSS/imageFonts.js": ["png",'unpacked'],
-            "unpacked/jax/output/HTML-CSS/jax.js": ['unpacked'],
-            "unpacked/jax/output/HTML-CSS/autoload": ['unpacked'],
-        }
-    },
-    "mathmlOutput": {
-        "description": "MathML output",
-        "paths": {
-            "config/AM_HTMLorMML.js": ['asciimathInput','htmlCssOutput'],
-            "config/MML_HTMLorMML.js": ['mathmlInput','htmlCssOutput'],
-            "config/TeX-AMS-MML_HTMLorMML.js": ['texInput','mathmlInput','htmlCssOutput'],
-            "config/TeX-MML-AM_HTMLorMML.js": ['texInput','mathmlInput','asciimathInput','htmlCssOutput'],
-
-            "config/AM_HTMLorMML-full.js": ['asciimathInput','htmlCssOutput'],
-            "config/MML_HTMLorMML-full.js": ['mathmlInput','htmlCssOutput'],
-            "config/TeX-AMS-MML_HTMLorMML-full.js": ['texInput','mathmlInput','htmlCssOutput'],
-            "config/TeX-MML-AM_HTMLorMML-full.js": ['texInput','mathmlInput','asciimathInput','htmlCssOutput'],
-
-            "unpacked/config/AM_HTMLorMML.js": ['asciimathInput','htmlCssOutput','unpacked'],
-            "unpacked/config/MML_HTMLorMML.js": ['mathmlInput','htmlCssOutput','unpacked'],
-            "unpacked/config/TeX-AMS-MML_HTMLorMML.js": ['texInput','mathmlInput','htmlCssOutput','unpacked'],
-            "unpacked/config/TeX-MML-AM_HTMLorMML.js": ['texInput','mathmlInput','asciimathInput','htmlCssOutput','unpacked'],
-
-            "unpacked/config/AM_HTMLorMML-full.js": ['asciimathInput','htmlCssOutput','unpacked'],
-            "unpacked/config/MML_HTMLorMML-full.js": ['mathmlInput','htmlCssOutput','unpacked'],
-            "unpacked/config/TeX-AMS-MML_HTMLorMML-full.js": ['texInput','mathmlInput','htmlCssOutput','unpacked'],
-            "unpacked/config/TeX-MML-AM_HTMLorMML-full.js": ['texInput','mathmlInput','asciimathInput','htmlCssOutput','unpacked'],
-            "jax/output/NativeMML": [],
-            "unpacked/jax/output/NativeMML": ['unpacked']
-        }
-    },
-    "svgOutput": {
-        "description": "SVG output",
-        "paths": {
-            "config/AM_SVG.js": ['asciimathInput'],
-            "config/MML_SVG.js": ['mathmlInput'],
-            "config/TeX-AMS-MML_SVG.js": ['texInput','mathmlInput'],
-            "config/TeX-AMS_SVG.js": ['texInput'],
-            "config/TeX-MML-AM_SVG.js": ['texInput','mathmlInput','asciimathInput'],
-            "unpacked/config/AM_SVG.js": ['asciimathInput','unpacked'],
-            "unpacked/config/MML_SVG.js": ['mathmlInput','unpacked'],
-            "unpacked/config/TeX-AMS-MML_SVG.js": ['texInput','mathmlInput','unpacked'],
-            "unpacked/config/TeX-AMS_SVG.js": ['texInput','unpacked'],
-            "unpacked/config/TeX-MML-AM_SVG.js": ['texInput','mathmlInput','asciimathInput','unpacked'],
-
-            "config/AM_SVG-full.js": ['asciimathInput'],
-            "config/MML_SVG-full.js": ['mathmlInput'],
-            "config/TeX-AMS-MML_SVG-full.js": ['texInput','mathmlInput'],
-            "config/TeX-AMS_SVG-full.js": ['texInput'],
-            "config/TeX-MML-AM_SVG-full.js": ['texInput','mathmlInput','asciimathInput'],
-            "unpacked/config/AM_SVG-full.js": ['asciimathInput','unpacked'],
-            "unpacked/config/MML_SVG-full.js": ['mathmlInput','unpacked'],
-            "unpacked/config/TeX-AMS-MML_SVG-full.js": ['texInput','mathmlInput','unpacked'],
-            "unpacked/config/TeX-AMS_SVG-full.js": ['texInput','unpacked'],
-            "unpacked/config/TeX-MML-AM_SVG-full.js": ['texInput','mathmlInput','asciimathInput','unpacked'],
-
-            "jax/output/SVG": [],
-            "unpacked/jax/output/SVG": ['unpacked']
-        }
-    },
     "commonHtmlOutput": {
         "description": "Common HTML output",
+        "help_text": "High-quality output in all modern browsers, and faster than HTML-CSS.",
         "paths": {
             "config/AM_CHTML.js": ['asciimathInput'],
             "config/MML_CHTML.js": ['mathmlInput'],
@@ -444,8 +359,106 @@ const components = {
             "unpacked/extensions/CHTML-preview.js": ['unpacked']
         }
     },
+    "htmlCssOutput": {
+        "description": "HTML-CSS output",
+        "help_text": "The original high-quality renderer. Slower than Common HTML.",
+        "paths": {
+            "config/AM_HTMLorMML.js": ['asciimathInput','mathmlOutput'],
+            "config/MML_HTMLorMML.js": ['mathmlInput','mathmlOutput'],
+            "config/TeX-AMS-MML_HTMLorMML.js": ['texInput','mathmlInput','mathmlOutput'],
+            "config/TeX-MML-AM_HTMLorMML.js": ['texInput','mathmlInput','asciimathInput','mathmlOutput'],
+
+            "config/AM_HTMLorMML-full.js": ['asciimathInput','mathmlOutput'],
+            "config/MML_HTMLorMML-full.js": ['mathmlInput','mathmlOutput'],
+            "config/TeX-AMS-MML_HTMLorMML-full.js": ['texInput','mathmlInput','mathmlOutput'],
+            "config/TeX-MML-AM_HTMLorMML-full.js": ['texInput','mathmlInput','asciimathInput','mathmlOutput'],
+
+            "unpacked/config/AM_HTMLorMML.js": ['asciimathInput','mathmlOutput','unpacked'],
+            "unpacked/config/MML_HTMLorMML.js": ['mathmlInput','mathmlOutput','unpacked'],
+            "unpacked/config/TeX-AMS-MML_HTMLorMML.js": ['texInput','mathmlInput','mathmlOutput','unpacked'],
+            "unpacked/config/TeX-MML-AM_HTMLorMML.js": ['texInput','mathmlInput','asciimathInput','mathmlOutput','unpacked'],
+
+            "unpacked/config/AM_HTMLorMML-full.js": ['asciimathInput','mathmlOutput','unpacked'],
+            "unpacked/config/MML_HTMLorMML-full.js": ['mathmlInput','mathmlOutput','unpacked'],
+            "unpacked/config/TeX-AMS-MML_HTMLorMML-full.js": ['texInput','mathmlInput','mathmlOutput','unpacked'],
+            "unpacked/config/TeX-MML-AM_HTMLorMML-full.js": ['texInput','mathmlInput','asciimathInput','mathmlOutput','unpacked'],
+
+            "jax/output/HTML-CSS/config.js": [],
+            "jax/output/HTML-CSS/imageFonts.js": ["png"],
+            "jax/output/HTML-CSS/jax.js": [],
+            "jax/output/HTML-CSS/autoload": [],
+
+            "unpacked/jax/output/HTML-CSS/config.js": ['unpacked'],
+            "unpacked/jax/output/HTML-CSS/imageFonts.js": ["png",'unpacked'],
+            "unpacked/jax/output/HTML-CSS/jax.js": ['unpacked'],
+            "unpacked/jax/output/HTML-CSS/autoload": ['unpacked'],
+        }
+    },
+    "mathmlOutput": {
+        "description": "MathML output",
+        "help_text": "Uses the browser's internal MathML support, if present.",
+        "paths": {
+            "config/AM_HTMLorMML.js": ['asciimathInput','htmlCssOutput'],
+            "config/MML_HTMLorMML.js": ['mathmlInput','htmlCssOutput'],
+            "config/TeX-AMS-MML_HTMLorMML.js": ['texInput','mathmlInput','htmlCssOutput'],
+            "config/TeX-MML-AM_HTMLorMML.js": ['texInput','mathmlInput','asciimathInput','htmlCssOutput'],
+
+            "config/AM_HTMLorMML-full.js": ['asciimathInput','htmlCssOutput'],
+            "config/MML_HTMLorMML-full.js": ['mathmlInput','htmlCssOutput'],
+            "config/TeX-AMS-MML_HTMLorMML-full.js": ['texInput','mathmlInput','htmlCssOutput'],
+            "config/TeX-MML-AM_HTMLorMML-full.js": ['texInput','mathmlInput','asciimathInput','htmlCssOutput'],
+
+            "unpacked/config/AM_HTMLorMML.js": ['asciimathInput','htmlCssOutput','unpacked'],
+            "unpacked/config/MML_HTMLorMML.js": ['mathmlInput','htmlCssOutput','unpacked'],
+            "unpacked/config/TeX-AMS-MML_HTMLorMML.js": ['texInput','mathmlInput','htmlCssOutput','unpacked'],
+            "unpacked/config/TeX-MML-AM_HTMLorMML.js": ['texInput','mathmlInput','asciimathInput','htmlCssOutput','unpacked'],
+
+            "unpacked/config/AM_HTMLorMML-full.js": ['asciimathInput','htmlCssOutput','unpacked'],
+            "unpacked/config/MML_HTMLorMML-full.js": ['mathmlInput','htmlCssOutput','unpacked'],
+            "unpacked/config/TeX-AMS-MML_HTMLorMML-full.js": ['texInput','mathmlInput','htmlCssOutput','unpacked'],
+            "unpacked/config/TeX-MML-AM_HTMLorMML-full.js": ['texInput','mathmlInput','asciimathInput','htmlCssOutput','unpacked'],
+            "jax/output/NativeMML": [],
+            "unpacked/jax/output/NativeMML": ['unpacked']
+        }
+    },
+    "svgOutput": {
+        "description": "SVG output",
+        "help_text": "Slightly faster than HTML-CSS, and looks better in print.",
+        "paths": {
+            "config/AM_SVG.js": ['asciimathInput'],
+            "config/MML_SVG.js": ['mathmlInput'],
+            "config/TeX-AMS-MML_SVG.js": ['texInput','mathmlInput'],
+            "config/TeX-AMS_SVG.js": ['texInput'],
+            "config/TeX-MML-AM_SVG.js": ['texInput','mathmlInput','asciimathInput'],
+            "unpacked/config/AM_SVG.js": ['asciimathInput','unpacked'],
+            "unpacked/config/MML_SVG.js": ['mathmlInput','unpacked'],
+            "unpacked/config/TeX-AMS-MML_SVG.js": ['texInput','mathmlInput','unpacked'],
+            "unpacked/config/TeX-AMS_SVG.js": ['texInput','unpacked'],
+            "unpacked/config/TeX-MML-AM_SVG.js": ['texInput','mathmlInput','asciimathInput','unpacked'],
+
+            "config/AM_SVG-full.js": ['asciimathInput'],
+            "config/MML_SVG-full.js": ['mathmlInput'],
+            "config/TeX-AMS-MML_SVG-full.js": ['texInput','mathmlInput'],
+            "config/TeX-AMS_SVG-full.js": ['texInput'],
+            "config/TeX-MML-AM_SVG-full.js": ['texInput','mathmlInput','asciimathInput'],
+            "unpacked/config/AM_SVG-full.js": ['asciimathInput','unpacked'],
+            "unpacked/config/MML_SVG-full.js": ['mathmlInput','unpacked'],
+            "unpacked/config/TeX-AMS-MML_SVG-full.js": ['texInput','mathmlInput','unpacked'],
+            "unpacked/config/TeX-AMS_SVG-full.js": ['texInput','unpacked'],
+            "unpacked/config/TeX-MML-AM_SVG-full.js": ['texInput','mathmlInput','asciimathInput','unpacked'],
+
+            "jax/output/SVG/config.js": [],
+            "jax/output/SVG/jax.js": [],
+            "jax/output/SVG/autoload": [],
+
+            "unpacked/jax/output/SVG/config.js": ['unpacked'],
+            "unpacked/jax/output/SVG/jax.js": ['unpacked'],
+            "unpacked/jax/output/SVG/autoload": ['unpacked'],
+        }
+    },
     "previewHtmlOutput": {
         "description": "Preview HTML output",
+        "help_text": "A very fast render which can complete before the more correct rendering.",
         "paths": {
             "jax/output/PreviewHTML": [],
             "unpacked/jax/output/PreviewHTML": ['unpacked'],
@@ -457,6 +470,7 @@ const components = {
     },
     "plainSourceOutput": {
         "description": "Plain source output",
+        "help_text": "Reproduces the input exactly without any processing.",
         "paths": {
             "jax/output/PlainSource": [],
             "unpacked/jax/output/PlainSource": ['unpacked']
@@ -514,10 +528,9 @@ const components = {
     },
     "notcode": {
         "description": "Non-code files",
+        "help_text": "Various files used by build systems, the LICENSE and README files.",
         "paths": {
             ".gitignore": [],
-            "docs": [],
-            "test": [],
             "CONTRIBUTING.md": [],
             "README-branch.txt": [],
             "README.md": [],
@@ -526,6 +539,13 @@ const components = {
             ".npmignore": [],
             "package.json": [],
             "LICENSE": []
+        }
+    },
+    "test": {
+        "description": "Test files",
+        "help_text": "Pages used to test that MathJax is working properly.",
+        "paths": {
+            "test": []
         }
     }
 }
@@ -537,7 +557,7 @@ const component_groups = [
     },
     {
         "name": "Font formats",
-        "components": ["eot","otf","png","svg","woff"]
+        "components": ["woff","svg","otf","png","eot"]
     },
     {
         "name": "Input formats",
@@ -545,7 +565,7 @@ const component_groups = [
     },
     {
         "name": "Output formats",
-        "components": ["htmlCssOutput","mathmlOutput","svgOutput","commonHtmlOutput","previewHtmlOutput","plainSourceOutput"]
+        "components": ["commonHtmlOutput","htmlCssOutput","svgOutput","mathmlOutput","previewHtmlOutput","plainSourceOutput"]
     },
     {
         "name": "Extensions",
@@ -553,6 +573,6 @@ const component_groups = [
     },
     {
         "name": "Other components",
-        "components": ["unpacked","locales","miscConfig","notcode"]
+        "components": ["unpacked","locales","miscConfig","notcode","test"]
     }
 ]
