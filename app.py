@@ -10,6 +10,9 @@ app = Flask(__name__)
 def rmq_job(s):
     print("JOB: "+s)
 
+if not os.path.exists('builds'):
+    os.makedirs('builds')
+
 if not os.path.exists('zips'):
     os.makedirs('zips')
 
