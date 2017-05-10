@@ -287,7 +287,6 @@ let app = new Vue({
                 }
             });
             paths.sort();
-            console.log(paths.join('\n'));
             function reset(folder) {
                 folder.use = 'none';
                 folder.dirs.forEach(reset);
