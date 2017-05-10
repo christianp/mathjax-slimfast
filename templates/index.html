@@ -35,16 +35,41 @@
             </li>
         </script>
 
-        <main id="app">
-            <section>
+        <header>
+            <h1><small>It's the...</small> MathJax Shrink-O-Matic!</h1>
+        </header>
+
+        <main id="app" :class="{loaded:true}">
+            <header>
+                <nav role="tablist">
+                    <a v-for="tab in tabs" role="tab" tabindex="0" @click="activeTab = tab" :class="{active:tab==activeTab}">{{tab.name}}</a>
+                </nav>
+                <span id="total-size">Total size: <filesize :size="total_space"></filesize></span>
+            </header>
+
+            <section :class="{active:activeTab.id=='components'}">
                 <h2>Components</h2>
-                <ul>
-                    <li v-for="component in Object.values(components)">
-                        <label><input type="checkbox" v-model="component.include"> {{component.description}}</label>
+                <ul id="component-groups">
+                    <li v-for="group in component_groups" class="component-group">
+                        <h3>{{group.name}}</h3>
+                        <ul>
+                            <li v-for="component_name in group.components" class="component">
+                                <label><input type="checkbox" v-model="components[component_name].include"> {{components[component_name].description}}</label>
+                                <span class="help-text" v-if="components[component_name].help_text">{{components[component_name].help_text}}</span>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
-                <p><button @click="set_components">Use these components</button></p>
+            </section>
 
+            <section :class="{active:activeTab.id=='files'}">
+                <p>Select the files and folders to include.</p>
+                <ul id="mathjax_files" class="folder-list">
+                    <folder name="MathJax" :model="files" root="true"></folder>
+                </ul>
+            </section>
+
+            <section :class="{active:activeTab.id=='compile'}">
                 <p>
                     <label>Configuration:
                         <select v-model="config">
@@ -53,16 +78,15 @@
                     </label>
                 </p>
 
-                <p>Total size: <filesize :size="total_space"></filesize></p>
-                <p><button @click="compile">Compile</button>{{compile_status}}</p>
-                <p v-if="compile_status=='compiled'"><a :href="'/zips/'+compile_zipfile">Download .zip</a></p>
-                <iframe :src="'/test?config='+config+'&id='+compile_id" id="test"></iframe>
-            </section>
-            <section>
-                <p>Select the files and folders to include.</p>
-                <ul id="mathjax_files" class="folder-list">
-                    <folder name="MathJax" :model="files" root="true"></folder>
-                </ul>
+                <p>
+                    <button @click="compile">Compile</button>
+                    <span v-if="compile_status=='compiling'">Beginning build...</span>
+                    <span v-if="compile_status=='waiting'">Waiting for build to finish...</span>
+                </p>
+                <div v-if="compile_id && config && compile_status=='compiled'">
+                    <iframe :src="'/test?config='+config+'&id='+compile_id" id="test"></iframe>
+                    <p>Everything looks OK? <a :href="compile_zipfile" download>Download a .zip of this build</a> (<filesize :size="compile_zip_size"></filesize>).</p>
+                </div>
             </section>
         </main>
         {% endraw %}

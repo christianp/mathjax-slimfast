@@ -5,189 +5,169 @@ const components = {
             "unpacked": []
         }
     },
-    "packed": {
-        "description": "The entire MathJax distribution",
-        "paths": {
-            "config": [],
-            "docs": [],
-            "extensions": [],
-            "jax": [],
-            "fonts": [],
-            "localization": [],
-            "MathJax.js": []
-        }
-    },
-    "configs": {
-        "description": "All configuration files",
-        "paths": {
-            "config": [],
-            "unpacked/config": ['unpacked']
-        }
-    },
     "fontAsana": {
-        "description": "The Asana font",
+        "description": "Asana",
         "paths": {
-            "fonts/HTML-CSS/Asana-Math/eot": ['htmlCssOutput','eot'],
-            "fonts/HTML-CSS/Asana-Math/otf": ['htmlCssOutput','otf'],
-            "fonts/HTML-CSS/Asana-Math/woff": ['htmlCssOutput','woff'],
-            "jax/output/HTML-CSS/fonts/Asana-Math": ['htmlCssOutput'],
-            "unpacked/jax/output/HTML-CSS/fonts/Asana-Math": ['htmlCssOutput','unpacked'],
+            "fonts/HTML-CSS/Asana-Math/eot": ['htmlCssOutput|commonHtmlOutput','eot'],
+            "fonts/HTML-CSS/Asana-Math/otf": ['htmlCssOutput|commonHtmlOutput','otf'],
+            "fonts/HTML-CSS/Asana-Math/woff": ['htmlCssOutput|commonHtmlOutput','woff'],
+            "jax/output/HTML-CSS/fonts/Asana-Math": ['htmlCssOutput|commonHtmlOutput'],
+            "unpacked/jax/output/HTML-CSS/fonts/Asana-Math": ['htmlCssOutput|commonHtmlOutput','unpacked'],
             "jax/output/SVG/fonts/Asana-Math": ['svgOutput'],
             "unpacked/jax/output/SVG/fonts/Asana-Math": ['unpacked','svgOutput']
         }
     },
     "fontGyrePagella": {
-        "description": "The Gyre-Pagella font",
+        "description": "Gyre-Pagella",
         "paths": {
-            "fonts/HTML-CSS/Gyre-Pagella/eot": ['htmlCssOutput','eot'],
-            "fonts/HTML-CSS/Gyre-Pagella/otf": ['htmlCssOutput','otf'],
-            "fonts/HTML-CSS/Gyre-Pagella/woff": ['htmlCssOutput','woff'],
-            "jax/output/HTML-CSS/fonts/Gyre-Pagella": ['htmlCssOutput'],
-            "unpacked/jax/output/HTML-CSS/fonts/Gyre-Pagella": ['htmlCssOutput','unpacked'],
+            "fonts/HTML-CSS/Gyre-Pagella/eot": ['htmlCssOutput|commonHtmlOutput','eot'],
+            "fonts/HTML-CSS/Gyre-Pagella/otf": ['htmlCssOutput|commonHtmlOutput','otf'],
+            "fonts/HTML-CSS/Gyre-Pagella/woff": ['htmlCssOutput|commonHtmlOutput','woff'],
+            "jax/output/HTML-CSS/fonts/Gyre-Pagella": ['htmlCssOutput|commonHtmlOutput'],
+            "unpacked/jax/output/HTML-CSS/fonts/Gyre-Pagella": ['htmlCssOutput|commonHtmlOutput','unpacked'],
             "jax/output/SVG/fonts/Gyre-Pagella": ['svgOutput'],
             "unpacked/jax/output/SVG/fonts/Gyre-Pagella": ['svgOutput','unpacked']
         }
     },
     "fontGyreTermes": {
-        "description": "The Gyre-Termes font",
+        "description": "Gyre-Termes",
         "paths": {
-            "fonts/HTML-CSS/Gyre-Termes/eot": ['htmlCssOutput','eot'],
-            "fonts/HTML-CSS/Gyre-Termes/otf": ['htmlCssOutput','otf'],
-            "fonts/HTML-CSS/Gyre-Termes/woff": ['htmlCssOutput','woff'],
-            "jax/output/HTML-CSS/fonts/Gyre-Termes": ['htmlCssOutput'],
-            "unpacked/jax/output/HTML-CSS/fonts/Gyre-Termes": ['htmlCssOutput','unpacked'],
+            "fonts/HTML-CSS/Gyre-Termes/eot": ['htmlCssOutput|commonHtmlOutput','eot'],
+            "fonts/HTML-CSS/Gyre-Termes/otf": ['htmlCssOutput|commonHtmlOutput','otf'],
+            "fonts/HTML-CSS/Gyre-Termes/woff": ['htmlCssOutput|commonHtmlOutput','woff'],
+            "jax/output/HTML-CSS/fonts/Gyre-Termes": ['htmlCssOutput|commonHtmlOutput'],
+            "unpacked/jax/output/HTML-CSS/fonts/Gyre-Termes": ['htmlCssOutput|commonHtmlOutput','unpacked'],
             "jax/output/SVG/fonts/Gyre-Termes": ['svgOutput'],
             "unpacked/jax/output/SVG/fonts/Gyre-Termes": ['svgOutput','unpacked']
         }
     },
     "fontLatinModern": {
-        "description": "The Latin Modern font",
+        "description": "Latin Modern",
         "paths": {
-            "fonts/HTML-CSS/Latin-Modern/eot": ['htmlCssOutput','eot'],
-            "fonts/HTML-CSS/Latin-Modern/otf": ['htmlCssOutput','otf'],
-            "fonts/HTML-CSS/Latin-Modern/woff": ['htmlCssOutput','woff'],
-            "jax/output/HTML-CSS/fonts/Latin-Modern": ['htmlCssOutput'],
-            "unpacked/jax/output/HTML-CSS/fonts/Latin-Modern": ['htmlCssOutput','unpacked'],
+            "fonts/HTML-CSS/Latin-Modern/eot": ['htmlCssOutput|commonHtmlOutput','eot'],
+            "fonts/HTML-CSS/Latin-Modern/otf": ['htmlCssOutput|commonHtmlOutput','otf'],
+            "fonts/HTML-CSS/Latin-Modern/woff": ['htmlCssOutput|commonHtmlOutput','woff'],
+            "jax/output/HTML-CSS/fonts/Latin-Modern": ['htmlCssOutput|commonHtmlOutput'],
+            "unpacked/jax/output/HTML-CSS/fonts/Latin-Modern": ['htmlCssOutput|commonHtmlOutput','unpacked'],
             "jax/output/SVG/fonts/Latin-Modern": ['svgOutput'],
             "unpacked/jax/output/SVG/fonts/Latin-Modern": ['svgOutput','unpacked']
         }
     },
     "fontNeoEuler": {
-        "description": "The Neo-Euler font",
+        "description": "Neo-Euler",
         "paths": {
-            "fonts/HTML-CSS/Neo-Euler/eot": ['htmlCssOutput','eot'],
-            "fonts/HTML-CSS/Neo-Euler/otf": ['htmlCssOutput','otf'],
-            "fonts/HTML-CSS/Neo-Euler/woff": ['htmlCssOutput','woff'],
-            "jax/output/HTML-CSS/fonts/Neo-Euler": ['htmlCssOutput'],
-            "unpacked/jax/output/HTML-CSS/fonts/Neo-Euler": ['htmlCssOutput','unpacked'],
+            "fonts/HTML-CSS/Neo-Euler/eot": ['htmlCssOutput|commonHtmlOutput','eot'],
+            "fonts/HTML-CSS/Neo-Euler/otf": ['htmlCssOutput|commonHtmlOutput','otf'],
+            "fonts/HTML-CSS/Neo-Euler/woff": ['htmlCssOutput|commonHtmlOutput','woff'],
+            "jax/output/HTML-CSS/fonts/Neo-Euler": ['htmlCssOutput|commonHtmlOutput'],
+            "unpacked/jax/output/HTML-CSS/fonts/Neo-Euler": ['htmlCssOutput|commonHtmlOutput','unpacked'],
             "jax/output/SVG/fonts/Neo-Euler": ['svgOutput'],
             "unpacked/jax/output/SVG/fonts/Neo-Euler": ['svgOutput','unpacked']
         }
     },
     "fontStix": {
-        "description": "The STIX font",
+        "description": "STIX",
         "paths": {
-            "fonts/HTML-CSS/STIX": ['htmlCssOutput'],
-            "jax/output/HTML-CSS/fonts/STIX": ['htmlCssOutput'],
-            "unpacked/jax/output/HTML-CSS/fonts/STIX": ['htmlCssOutput','unpacked'],
+            "fonts/HTML-CSS/STIX": ['htmlCssOutput|commonHtmlOutput'],
+            "jax/output/HTML-CSS/fonts/STIX": ['htmlCssOutput|commonHtmlOutput'],
+            "unpacked/jax/output/HTML-CSS/fonts/STIX": ['htmlCssOutput|commonHtmlOutput','unpacked'],
             "jax/output/SVG/fonts/STIX": ['svgOutput'],
             "unpacked/jax/output/SVG/fonts/STIX": ['svgOutput','unpacked']
         }
     },
     "fontStixWeb": {
-        "description": "The STIX-Web font",
+        "description": "STIX-Web",
         "paths": {
-            "fonts/HTML-CSS/STIX-Web/eot": ['htmlCssOutput','eot'],
-            "fonts/HTML-CSS/STIX-Web/otf": ['htmlCssOutput','otf'],
-            "fonts/HTML-CSS/STIX-Web/woff": ['htmlCssOutput','woff'],
-            "jax/output/HTML-CSS/fonts/STIX-Web": ['htmlCssOutput'],
-            "unpacked/jax/output/HTML-CSS/fonts/STIX-Web": ['htmlCssOutput','unpacked'],
+            "fonts/HTML-CSS/STIX-Web/eot": ['htmlCssOutput|commonHtmlOutput','eot'],
+            "fonts/HTML-CSS/STIX-Web/otf": ['htmlCssOutput|commonHtmlOutput','otf'],
+            "fonts/HTML-CSS/STIX-Web/woff": ['htmlCssOutput|commonHtmlOutput','woff'],
+            "jax/output/HTML-CSS/fonts/STIX-Web": ['htmlCssOutput|commonHtmlOutput'],
+            "unpacked/jax/output/HTML-CSS/fonts/STIX-Web": ['htmlCssOutput|commonHtmlOutput','unpacked'],
             "jax/output/SVG/fonts/STIX-Web": ['svgOutput'],
             "unpacked/jax/output/SVG/fonts/STIX-Web": ['svgOutput','unpacked']
         }
     },
     "fontTeX": {
-        "description": "The TeX font",
+        "description": "TeX",
         "paths": {
-            "fonts/HTML-CSS/TeX/eot": ['htmlCssOutput','eot'],
-            "fonts/HTML-CSS/TeX/otf": ['htmlCssOutput','otf'],
-            "fonts/HTML-CSS/TeX/png": ['htmlCssOutput','png'],
-            "fonts/HTML-CSS/TeX/svg": ['htmlCssOutput','svg'],
-            "fonts/HTML-CSS/TeX/woff": ['htmlCssOutput','woff'],
-            "jax/output/HTML-CSS/fonts/TeX": ['htmlCssOutput'],
-            "unpacked/jax/output/HTML-CSS/fonts/TeX": ['htmlCssOutput','unpacked'],
+            "fonts/HTML-CSS/TeX/eot": ['htmlCssOutput|commonHtmlOutput','eot'],
+            "fonts/HTML-CSS/TeX/otf": ['htmlCssOutput|commonHtmlOutput','otf'],
+            "fonts/HTML-CSS/TeX/png": ['htmlCssOutput|commonHtmlOutput','png'],
+            "fonts/HTML-CSS/TeX/svg": ['htmlCssOutput|commonHtmlOutput','svg'],
+            "fonts/HTML-CSS/TeX/woff": ['htmlCssOutput|commonHtmlOutput','woff'],
+            "jax/output/HTML-CSS/fonts/TeX": ['htmlCssOutput|commonHtmlOutput'],
+            "unpacked/jax/output/HTML-CSS/fonts/TeX": ['htmlCssOutput|commonHtmlOutput','unpacked'],
             "jax/output/SVG/fonts/TeX": ['svgOutput'],
             "unpacked/jax/output/SVG/fonts/TeX": ['svgOutput','unpacked']
         }
     },
-    "dropFonts": {
-        "description": "All fonts",
-        "paths": {
-            "fonts": []
-        }
-    },
     "eot": {
         "description": "Fonts in .eot format",
+        "help_text": "Only needed if you want to support IE < 9",
         "paths": {
-            "fonts/HTML-CSS/Asana-Math/eot": ['htmlCssOutput','fontAsana'],
-            "fonts/HTML-CSS/Gyre-Pagella/eot": ['htmlCssOutput','fontGyrePagella'],
-            "fonts/HTML-CSS/Gyre-Termes/eot": ['htmlCssOutput','fontGyreTermes'],
-            "fonts/HTML-CSS/Latin-Modern/eot": ['htmlCssOutput','fontLatinModern'],
-            "fonts/HTML-CSS/Neo-Euler/eot": ['htmlCssOutput','fontNeoEuler'],
-            "fonts/HTML-CSS/STIX-Web/eot": ['htmlCssOutput','fontStixWeb'],
-            "fonts/HTML-CSS/TeX/eot": ['htmlCssOutput','fontTeX'],
+            "fonts/HTML-CSS/Asana-Math/eot": ['htmlCssOutput|commonHtmlOutput','fontAsana'],
+            "fonts/HTML-CSS/Gyre-Pagella/eot": ['htmlCssOutput|commonHtmlOutput','fontGyrePagella'],
+            "fonts/HTML-CSS/Gyre-Termes/eot": ['htmlCssOutput|commonHtmlOutput','fontGyreTermes'],
+            "fonts/HTML-CSS/Latin-Modern/eot": ['htmlCssOutput|commonHtmlOutput','fontLatinModern'],
+            "fonts/HTML-CSS/Neo-Euler/eot": ['htmlCssOutput|commonHtmlOutput','fontNeoEuler'],
+            "fonts/HTML-CSS/STIX-Web/eot": ['htmlCssOutput|commonHtmlOutput','fontStixWeb'],
+            "fonts/HTML-CSS/TeX/eot": ['htmlCssOutput|commonHtmlOutput','fontTeX'],
         }
     },
     "otf": {
         "description": "Fonts in .otf format",
+        "help_text": "Not needed if you also include .woff",
         "paths": {
-            "fonts/HTML-CSS/Asana-Math/otf": ['htmlCssOutput','fontAsana'],
-            "fonts/HTML-CSS/Gyre-Pagella/otf": ['htmlCssOutput','fontGyrePagella'],
-            "fonts/HTML-CSS/Gyre-Termes/otf": ['htmlCssOutput','fontGyreTermes'],
-            "fonts/HTML-CSS/Latin-Modern/otf": ['htmlCssOutput','fontLatinModern'],
-            "fonts/HTML-CSS/Neo-Euler/otf": ['htmlCssOutput','fontNeoEuler'],
-            "fonts/HTML-CSS/STIX-Web/otf": ['htmlCssOutput','fontStixWeb'],
-            "fonts/HTML-CSS/TeX/otf": ['htmlCssOutput','fontTeX'],
+            "fonts/HTML-CSS/Asana-Math/otf": ['htmlCssOutput|commonHtmlOutput','fontAsana'],
+            "fonts/HTML-CSS/Gyre-Pagella/otf": ['htmlCssOutput|commonHtmlOutput','fontGyrePagella'],
+            "fonts/HTML-CSS/Gyre-Termes/otf": ['htmlCssOutput|commonHtmlOutput','fontGyreTermes'],
+            "fonts/HTML-CSS/Latin-Modern/otf": ['htmlCssOutput|commonHtmlOutput','fontLatinModern'],
+            "fonts/HTML-CSS/Neo-Euler/otf": ['htmlCssOutput|commonHtmlOutput','fontNeoEuler'],
+            "fonts/HTML-CSS/STIX-Web/otf": ['htmlCssOutput|commonHtmlOutput','fontStixWeb'],
+            "fonts/HTML-CSS/TeX/otf": ['htmlCssOutput|commonHtmlOutput','fontTeX'],
         }
     },
     "png": {
         "description": "Fonts in .png format",
+        "help_text": "Fallback used if other fonts can't load",
         "paths": {
-            "fonts/HTML-CSS/Asana-Math/png": ['htmlCssOutput','fontAsana'],
-            "fonts/HTML-CSS/Gyre-Pagella/png": ['htmlCssOutput','fontGyrePagella'],
-            "fonts/HTML-CSS/Gyre-Termes/png": ['htmlCssOutput','fontGyreTermes'],
-            "fonts/HTML-CSS/Latin-Modern/png": ['htmlCssOutput','fontLatinModern'],
-            "fonts/HTML-CSS/Neo-Euler/png": ['htmlCssOutput','fontNeoEuler'],
-            "fonts/HTML-CSS/STIX-Web/png": ['htmlCssOutput','fontStixWeb'],
-            "fonts/HTML-CSS/TeX/png": ['htmlCssOutput','fontTeX'],
+            "fonts/HTML-CSS/Asana-Math/png": ['htmlCssOutput|commonHtmlOutput','fontAsana'],
+            "fonts/HTML-CSS/Gyre-Pagella/png": ['htmlCssOutput|commonHtmlOutput','fontGyrePagella'],
+            "fonts/HTML-CSS/Gyre-Termes/png": ['htmlCssOutput|commonHtmlOutput','fontGyreTermes'],
+            "fonts/HTML-CSS/Latin-Modern/png": ['htmlCssOutput|commonHtmlOutput','fontLatinModern'],
+            "fonts/HTML-CSS/Neo-Euler/png": ['htmlCssOutput|commonHtmlOutput','fontNeoEuler'],
+            "fonts/HTML-CSS/STIX-Web/png": ['htmlCssOutput|commonHtmlOutput','fontStixWeb'],
+            "fonts/HTML-CSS/TeX/png": ['htmlCssOutput|commonHtmlOutput','fontTeX'],
         }
     },
     "svg": {
         "description": "Fonts in .svg format",
+        "help_text": "Must include if you want to support iPhone and iPad",
         "paths": {
-            "fonts/HTML-CSS/Asana-Math/svg": ['htmlCssOutput','fontAsana'],
-            "fonts/HTML-CSS/Gyre-Pagella/svg": ['htmlCssOutput','fontGyrePagella'],
-            "fonts/HTML-CSS/Gyre-Termes/svg": ['htmlCssOutput','fontGyreTermes'],
-            "fonts/HTML-CSS/Latin-Modern/svg": ['htmlCssOutput','fontLatinModern'],
-            "fonts/HTML-CSS/Neo-Euler/svg": ['htmlCssOutput','fontNeoEuler'],
-            "fonts/HTML-CSS/STIX-Web/svg": ['htmlCssOutput','fontStixWeb'],
-            "fonts/HTML-CSS/TeX/svg": ['htmlCssOutput','fontTeX'],
+            "fonts/HTML-CSS/Asana-Math/svg": ['htmlCssOutput|commonHtmlOutput','fontAsana'],
+            "fonts/HTML-CSS/Gyre-Pagella/svg": ['htmlCssOutput|commonHtmlOutput','fontGyrePagella'],
+            "fonts/HTML-CSS/Gyre-Termes/svg": ['htmlCssOutput|commonHtmlOutput','fontGyreTermes'],
+            "fonts/HTML-CSS/Latin-Modern/svg": ['htmlCssOutput|commonHtmlOutput','fontLatinModern'],
+            "fonts/HTML-CSS/Neo-Euler/svg": ['htmlCssOutput|commonHtmlOutput','fontNeoEuler'],
+            "fonts/HTML-CSS/STIX-Web/svg": ['htmlCssOutput|commonHtmlOutput','fontStixWeb'],
+            "fonts/HTML-CSS/TeX/svg": ['htmlCssOutput|commonHtmlOutput','fontTeX'],
         }
     },
     "woff": {
         "description": "Fonts in .woff format",
+        "help_text": "Will work in every browser except on iPhone and iPad",
         "paths": {
-            "fonts/HTML-CSS/Asana-Math/woff": ['htmlCssOutput','fontAsana'],
-            "fonts/HTML-CSS/Gyre-Pagella/woff": ['htmlCssOutput','fontGyrePagella'],
-            "fonts/HTML-CSS/Gyre-Termes/woff": ['htmlCssOutput','fontGyreTermes'],
-            "fonts/HTML-CSS/Latin-Modern/woff": ['htmlCssOutput','fontLatinModern'],
-            "fonts/HTML-CSS/Neo-Euler/woff": ['htmlCssOutput','fontNeoEuler'],
-            "fonts/HTML-CSS/STIX-Web/woff": ['htmlCssOutput','fontStixWeb'],
-            "fonts/HTML-CSS/TeX/woff": ['htmlCssOutput','fontTeX'],
+            "fonts/HTML-CSS/Asana-Math/woff": ['htmlCssOutput|commonHtmlOutput','fontAsana'],
+            "fonts/HTML-CSS/Gyre-Pagella/woff": ['htmlCssOutput|commonHtmlOutput','fontGyrePagella'],
+            "fonts/HTML-CSS/Gyre-Termes/woff": ['htmlCssOutput|commonHtmlOutput','fontGyreTermes'],
+            "fonts/HTML-CSS/Latin-Modern/woff": ['htmlCssOutput|commonHtmlOutput','fontLatinModern'],
+            "fonts/HTML-CSS/Neo-Euler/woff": ['htmlCssOutput|commonHtmlOutput','fontNeoEuler'],
+            "fonts/HTML-CSS/STIX-Web/woff": ['htmlCssOutput|commonHtmlOutput','fontStixWeb'],
+            "fonts/HTML-CSS/TeX/woff": ['htmlCssOutput|commonHtmlOutput','fontTeX'],
         }
     },
     "asciimathInput": {
-        "description": "The AsciiMath input",
+        "description": "AsciiMath input",
         "paths": {
             "config/AM_CHTML-full.js": ['commonHtmlOutput'],
             "config/AM_CHTML.js": ['commonHtmlOutput'],
@@ -222,7 +202,7 @@ const components = {
         }
     },
     "mathmlInput": {
-        "description": "The MathML input",
+        "description": "MathML input",
         "paths": {
             "config/MML_CHTML.js": ['commonHtmlOutput'],
             "config/MML_HTMLorMML.js": ['htmlCssOutput','mathmlOutput'],
@@ -266,7 +246,7 @@ const components = {
         }
     },
     "texInput": {
-        "description": "The TeX input",
+        "description": "TeX input",
         "paths": {
             "config/TeX-AMS-MML_HTMLorMML.js": ['mathmlInput','htmlCssOutput','mathmlOutput'],
             "config/TeX-AMS-MML_SVG.js": ['mathmlInput','svgOutput'],
@@ -306,7 +286,7 @@ const components = {
         }
     },
     "extensionsAsciimath": {
-        "description": "The AsciiMath extension",
+        "description": "AsciiMath extension",
         "paths": {
             "extensions/asciimath2jax.js": ['asciimathInput'],
             "unpacked/extensions/asciimath2jax.js": ['asciimathInput','unpacked']
@@ -340,7 +320,7 @@ const components = {
         }
     },
     "htmlCssOutput": {
-        "description": "The HTML-CSS output",
+        "description": "HTML-CSS output",
         "paths": {
             "config/AM_HTMLorMML.js": ['asciimathInput','mathmlOutput'],
             "config/MML_HTMLorMML.js": ['mathmlInput','mathmlOutput'],
@@ -362,12 +342,19 @@ const components = {
             "unpacked/config/TeX-AMS-MML_HTMLorMML-full.js": ['texInput','mathmlInput','mathmlOutput','unpacked'],
             "unpacked/config/TeX-MML-AM_HTMLorMML-full.js": ['texInput','mathmlInput','asciimathInput','mathmlOutput','unpacked'],
 
-            "jax/output/HTML-CSS": [],
-            "unpacked/jax/output/HTML-CSS": ['unpacked']
+            "jax/output/HTML-CSS/config.js": [],
+            "jax/output/HTML-CSS/imageFonts.js": ["png"],
+            "jax/output/HTML-CSS/jax.js": [],
+            "jax/output/HTML-CSS/autoload": [],
+
+            "unpacked/jax/output/HTML-CSS/config.js": ['unpacked'],
+            "unpacked/jax/output/HTML-CSS/imageFonts.js": ["png",'unpacked'],
+            "unpacked/jax/output/HTML-CSS/jax.js": ['unpacked'],
+            "unpacked/jax/output/HTML-CSS/autoload": ['unpacked'],
         }
     },
     "mathmlOutput": {
-        "description": "The MathML output",
+        "description": "MathML output",
         "paths": {
             "config/AM_HTMLorMML.js": ['asciimathInput','htmlCssOutput'],
             "config/MML_HTMLorMML.js": ['mathmlInput','htmlCssOutput'],
@@ -393,7 +380,7 @@ const components = {
         }
     },
     "svgOutput": {
-        "description": "The SVG output",
+        "description": "SVG output",
         "paths": {
             "config/AM_SVG.js": ['asciimathInput'],
             "config/MML_SVG.js": ['mathmlInput'],
@@ -422,7 +409,7 @@ const components = {
         }
     },
     "commonHtmlOutput": {
-        "description": "The Common HTML output",
+        "description": "Common HTML output",
         "paths": {
             "config/AM_CHTML.js": ['asciimathInput'],
             "config/MML_CHTML.js": ['mathmlInput'],
@@ -441,6 +428,16 @@ const components = {
             "unpacked/config/TeX-AMS_CHTML-full.js": ['texInput','unpacked'],
             "unpacked/config/TeX-MML-AM_CHTML-full.js": ['texInput','mathmlInput','unpacked'],
 
+            "jax/output/HTML-CSS/config.js": [],
+            "jax/output/HTML-CSS/imageFonts.js": ["png"],
+            "jax/output/HTML-CSS/jax.js": [],
+            "jax/output/HTML-CSS/autoload": [],
+
+            "unpacked/jax/output/HTML-CSS/config.js": ['unpacked'],
+            "unpacked/jax/output/HTML-CSS/imageFonts.js": ["png",'unpacked'],
+            "unpacked/jax/output/HTML-CSS/jax.js": ['unpacked'],
+            "unpacked/jax/output/HTML-CSS/autoload": ['unpacked'],
+
             "jax/output/CommonHTML": [],
             "unpacked/jax/output/CommonHTML": ['unpacked'],
             "extensions/CHTML-preview.js": [],
@@ -448,7 +445,7 @@ const components = {
         }
     },
     "previewHtmlOutput": {
-        "description": "The preview HTML output",
+        "description": "Preview HTML output",
         "paths": {
             "jax/output/PreviewHTML": [],
             "unpacked/jax/output/PreviewHTML": ['unpacked'],
@@ -459,7 +456,7 @@ const components = {
         }
     },
     "plainSourceOutput": {
-        "description": "The plain source output",
+        "description": "Plain source output",
         "paths": {
             "jax/output/PlainSource": [],
             "unpacked/jax/output/PlainSource": ['unpacked']
@@ -532,3 +529,30 @@ const components = {
         }
     }
 }
+
+const component_groups = [
+    {
+        "name": "Fonts",
+        "components": ["fontAsana","fontGyrePagella","fontGyreTermes","fontLatinModern","fontNeoEuler","fontStix","fontStixWeb","fontTeX"]
+    },
+    {
+        "name": "Font formats",
+        "components": ["eot","otf","png","svg","woff"]
+    },
+    {
+        "name": "Input formats",
+        "components": ["asciimathInput","mathmlInput","texInput"]
+    },
+    {
+        "name": "Output formats",
+        "components": ["htmlCssOutput","mathmlOutput","svgOutput","commonHtmlOutput","previewHtmlOutput","plainSourceOutput"]
+    },
+    {
+        "name": "Extensions",
+        "components": ["extensionsAsciimath","extensionsMathml","extensionsTeX","extensionHtmlCss","a11yExtensions","miscExtensions"]
+    },
+    {
+        "name": "Other components",
+        "components": ["unpacked","locales","miscConfig","notcode"]
+    }
+]

@@ -1,3 +1,7 @@
+#app:not(.loaded) {
+    display: none;
+}
+
 .folder-list {
     list-style: none;
     padding-left: 0;
@@ -52,11 +56,12 @@
 }
 
 main {
-    display: flex;
 }
 section {
-    flex: 1 0;
     padding: 0 1rem;
+}
+section:not(.active) {
+    display: none;
 }
 
 .filesize.B { font-size: 0.7em; }
@@ -67,4 +72,51 @@ section {
 #test {
     width: 100%;
     margin: 1rem 0;
+}
+
+#app header {
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid #ccc;
+}
+
+nav {
+    flex: 1 0;
+}
+
+nav > a, #total-size {
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    line-height: 1em;
+}
+nav > a {
+    cursor: pointer;
+    display: inline-block;
+}
+
+nav > a.active {
+    background: black;
+    color: white;
+}
+nav > a:not(:last-child)::after {
+    content: '→';
+    margin-left: 0.5rem;
+}
+
+.help-text {
+    margin-left: 2em;
+    color: #666;
+}
+ul#component-groups {
+    list-style: none;
+    padding: 0;
+}
+.component-group ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+.component {
+}
+.component label {
+    display: block;
 }

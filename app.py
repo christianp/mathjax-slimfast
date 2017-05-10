@@ -1,11 +1,14 @@
 from flask import Flask, request, render_template, send_from_directory, jsonify
 import os
-import shutil
 from zipfile import ZipFile
-from pathlib import Path
 import uuid
+import tasks
+import helpers
 
 app = Flask(__name__)
+
+def rmq_job(s):
+    print("JOB: "+s)
 
 if not os.path.exists('zips'):
     os.makedirs('zips')
@@ -23,45 +26,33 @@ def tree(path):
 
 mathjax_files = tree('MathJax')
 
-def create_package(description,inpath='MathJax',outpath='output'):
-    os.makedirs(outpath)
-    for f in description['files']:
-        shutil.copyfile(os.path.join(inpath,f),os.path.join(outpath,f))
-    for d,subdesc in description['dirs'].items():
-        if subdesc=='all':
-            shutil.copytree(os.path.join(inpath,d),os.path.join(outpath,d))
-        else:
-            create_package(subdesc,os.path.join(inpath,d),os.path.join(outpath,d))
-
 @app.route('/')
 def home():
     return render_template('index.html',mathjax_files=mathjax_files)
 
 @app.route('/make',methods=['POST'])
-def make_package():
+def make():
     id = uuid.uuid4().hex
     description = request.get_json()
-    outpath = 'output/MathJax-{}'.format(id)
-    if os.path.exists(outpath):
-        shutil.rmtree(outpath)
-    create_package(description,outpath=outpath)
-    zippath = 'zips/Mathjax-{}.zip'.format(id)
-    z = ZipFile(zippath,'w')
-    for root,ds,fs in os.walk('output'):
-        for f in fs:
-            inpath = Path(root,f)
-            opath = Path(*inpath.parts[1:])
-            z.write(str(inpath),arcname=str(opath))
-    z.close()
+    job = tasks.make_package(id, description)
+    return jsonify({'id':id})
 
-    return jsonify({
-        'id': id,
-        'zippath': zippath,
-    })
+@app.route('/build/<id>/ready')
+def is_ready(id):
+    ready = os.path.exists(os.path.join('builds','{}.txt'.format(id)))
+    d = {'ready':ready}
+    if ready:
+        statinfo = os.stat(os.path.join('zips',helpers.zip_name(id)))
+        d['zip_size'] = statinfo.st_size
+    return jsonify(d)
+
+@app.route('/build/<id>.zip')
+def zip(id):
+    return send_from_directory('zips','MathJax-{}.zip'.format(id),mimetype='application/zip',as_attachment=True)
 
 @app.route('/MathJax/<id>/<path:path>')
 def mathjax(id, path):
-    return send_from_directory('output/MathJax-{}'.format(id),path)
+    return send_from_directory(helpers.output_path(id),path)
 
 @app.route('/test')
 def test():

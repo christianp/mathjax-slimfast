@@ -117,7 +117,7 @@ Vue.component('folder',{
 
 Vue.component('filesize',{
     template: '<span class="filesize" :class="[units]">{{scaled_size}}{{units}}</span>',
-    props: ['size'],
+    props: ['size','resize'],
     computed: {
         scaled_size() {
             let size = this.size;
@@ -156,20 +156,37 @@ Object.values(components).map(function(c) {
     c.include = false;
 });
 
+class Tab {
+    constructor(id,name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+
+const tabs = [
+    new Tab('components','Choose components'),
+    new Tab('files','Refine included files'),
+    new Tab('compile','Build a package')
+];
+
 let app = new Vue({
     el: '#app',
     filters: {
         filesize: filesize_filter
     },
     data: {
+        tabs: tabs,
+        activeTab: tabs[0],
         compiled: false,
         compile_status: 'never',
         compile_id: '',
         compile_zipfile: '',
+        compile_zip_size: 0,
         files: mathjax_files,
         configs: configs,
         config: configs[0],
         components: components,
+        component_groups: component_groups
     },
     computed: {
         total_space() {
@@ -182,17 +199,37 @@ let app = new Vue({
             let config_dir = get_path('config',this.files);
             let files = config_dir.use=='all' ? config_dir.files : config_dir.files.filter(f=>f.use);
             return files.map(f=>f.name);
+        },
+        enabled_components() {
+            return Object.entries(this.components).filter(c=>c[1].include).map(c=>c[0]);
         }
     },
     watch: {
         description() {
             localStorage['package_description'] = JSON.stringify(this.description);
+        },
+        enabled_components() {
+            localStorage['enabled_components'] = JSON.stringify(this.enabled_components);
+            this.set_components();
+        },
+        available_configs() {
+            if(this.available_configs.length && this.available_configs.indexOf(this.config)==-1) {
+                this.config = this.available_configs[0];
+            }
         }
     },
     created: function() {
+        const app = this;
+        let data;
         if('package_description' in localStorage) {
-            let data = JSON.parse(localStorage['package_description']);
+            data = JSON.parse(localStorage['package_description']);
             load_description(data,this.files);
+        }
+        if('enabled_components' in localStorage) {
+            data = JSON.parse(localStorage['enabled_components']);
+            data.forEach(function(k) {
+                app.components[k].include = true;
+            });
         }
     },
     methods: {
@@ -209,10 +246,10 @@ let app = new Vue({
             .then(function(response) {
                 if(response.ok) {
                     app.compiled = true;
-                    app.compile_status = 'compiled';
+                    app.compile_status = 'waiting';
                     response.json().then(function(j) {
-                        app.compile_id = j.id,
-                        app.compile_zipfile = j.zippath
+                        app.compile_id = j.id;
+                        app.wait_for_ready();
                     });
                 } else {
                     app.compile_status = 'error';
@@ -220,12 +257,31 @@ let app = new Vue({
                 }
             });
         },
+        wait_for_ready() {
+            let app = this;
+            function respond(d) {
+                if(!d.ready) {
+                    setTimeout(check_ready,3000);
+                } else {
+                    app.compile_status='compiled';
+                    app.compile_zipfile = `/build/${app.compile_id}.zip`;
+                    app.compile_zip_size = d.zip_size;
+                }
+            }
+            function check_ready() {
+                fetch(`/build/${app.compile_id}/ready`).then(r=>r.json()).then(respond);
+            }
+            check_ready();
+        },
         set_components() {
             let paths = [];
             let app = this;
             Object.values(this.components).filter(c=>c.include).forEach(function(c) {
                 for(let path in c.paths) {
-                    if(c.paths[path].every(k=>app.components[k].include)) {
+                    let satisfied = c.paths[path].every(function(deps) {
+                        return deps.split('|').some(k=>app.components[k].include);
+                    });
+                    if(satisfied) {
                         paths.push(path);
                     }
                 }
