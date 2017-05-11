@@ -583,3 +583,150 @@ const component_groups = [
         "components": ["unpacked","locales","miscConfig","notcode","test"]
     }
 ]
+
+const config_bits = [
+    {
+        components: ['fontAsana','svgOutput'],
+        config: {
+            SVG: {
+                font: "Asana-Math"
+            }
+        }
+    },
+    {
+        components: ['fontAsana','htmlCssOutput'],
+        config: {
+            "HTML-CSS": {
+                preferredFont: "Asana-Math",
+                webFont: "Asana-Math",
+                availableFonts: ["Asana-Math"]
+            }
+        }
+    },
+    {
+        components: ['fontGyrePagella','svgOutput'],
+        config: {
+            SVG: {
+                font: "Gyre-Pagella"
+            }
+        }
+    },
+    {
+        components: ['fontGyrePagella','htmlCssOutput'],
+        config: {
+            "HTML-CSS": {
+                preferredFont: "Gyre-Pagella",
+                webFont: "Gyre-Pagella",
+                availableFonts: ["Gyre-Pagella"]
+            }
+        }
+    },
+    {
+        components: ['fontGyreTermes','svgOutput'],
+        config: {
+            SVG: {
+                font: "Gyre-Termes"
+            }
+        }
+    },
+    {
+        components: ['fontGyreTermes','htmlCssOutput'],
+        config: {
+            "HTML-CSS": {
+                preferredFont: "Gyre-Termes",
+                webFont: "Gyre-Termes",
+                availableFonts: ["Gyre-Termes"]
+            }
+        }
+    },
+    {
+        components: ['fontLatinModern','svgOutput'],
+        config: {
+            SVG: {
+                font: "Latin-Modern"
+            }
+        }
+    },
+    {
+        components: ['fontLatinModern','htmlCssOutput'],
+        config: {
+            "HTML-CSS": {
+                preferredFont: "Latin-Modern",
+                webFont: "Latin-Modern",
+                availableFonts: ["Latin-Modern"]
+            }
+        }
+    },
+    {
+        components: ['fontNeoEuler','svgOutput'],
+        config: {
+            SVG: {
+                font: "Neo-Euler"
+            }
+        }
+    },
+    {
+        components: ['fontNeoEuler','htmlCssOutput'],
+        config: {
+            "HTML-CSS": {
+                preferredFont: "Neo-Euler",
+                webFont: "Neo-Euler",
+                availableFonts: ["Neo-Euler"]
+            }
+        }
+    },
+    {
+        components: ['fontStix','svgOutput'],
+        config: {
+            SVG: {
+                font: "STIX"
+            }
+        }
+    },
+    {
+        components: ['fontStix','htmlCssOutput'],
+        config: {
+            "HTML-CSS": {
+                preferredFont: "STIX",
+                webFont: "STIX",
+                availableFonts: ["STIX"]
+            }
+        }
+    },
+    {
+        components: ['fontStixWeb','svgOutput'],
+        config: {
+            SVG: {
+                font: "STIX-Web"
+            }
+        }
+    },
+    {
+        components: ['fontStixWeb','htmlCssOutput'],
+        config: {
+            "HTML-CSS": {
+                preferredFont: "STIX-Web",
+                webFont: "STIX-Web",
+                availableFonts: ["STIX-Web"]
+            }
+        }
+    },
+    {
+        components: ['fontTeX','svgOutput'],
+        config: {
+            SVG: {
+                font: "TeX"
+            }
+        }
+    },
+    {
+        components: ['fontTeX','htmlCssOutput'],
+        config: {
+            "HTML-CSS": {
+                preferredFont: "TeX",
+                webFont: "TeX",
+                availableFonts: ["TeX"]
+            }
+        }
+    },
+]

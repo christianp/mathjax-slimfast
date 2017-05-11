@@ -1,7 +1,10 @@
 <!doctype html>
 <html>
     <head>
-        <script src="/MathJax/{{id}}/MathJax.js?config={{config}}"></script>
+        <script type="text/x-mathjax-config">
+            {{inline_config|safe}}
+        </script>
+        <script src="/MathJax/{{id}}/MathJax.js?config={{config_file}}"></script>
     </head>
     <body>
         <p>\( x^2 + 1 = 2\)</p>

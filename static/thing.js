@@ -186,7 +186,8 @@ let app = new Vue({
         configs: configs,
         config: configs[0],
         components: components,
-        component_groups: component_groups
+        component_groups: component_groups,
+        inline_config: ''
     },
     computed: {
         total_space() {
@@ -202,9 +203,52 @@ let app = new Vue({
         },
         enabled_components() {
             return Object.entries(this.components).filter(c=>c[1].include).map(c=>c[0]);
+        },
+
+        auto_inline_config() {
+            const app = this;
+            let conf = {};
+            function extend(obj,def) {
+                Object.entries(def).forEach(function(e) {
+                    let [name,value] = e;
+                    if(Array.isArray(value)) {
+                        if(obj.hasOwnProperty(name)) {
+                            obj[name] = obj[name].concat(value);
+                        } else {
+                            obj[name] = value.slice();
+                        }
+                    } else if(typeof(value)!=='object') {
+                        obj[name] = value;
+                    } else {
+                        if(!obj.hasOwnProperty(name)) {
+                            obj[name] = {};
+                        }
+                        extend(obj[name],value);
+                    }
+                });
+            }
+
+            config_bits.forEach(function(bit) {
+                if(bit.components.every(c=>app.components[c].include)) {
+                    extend(conf,bit.config);
+                }
+            });
+            return conf;
+        },
+
+        test_query_string() {
+            const bits = {
+                config_file: this.config,
+                id: this.compile_id,
+                inline_config: this.inline_config
+            }
+            return Object.entries(bits).map(function(b){return b[0]+'='+encodeURIComponent(b[1])}).join('&');
         }
     },
     watch: {
+        auto_inline_config() {
+            this.inline_config = `MathJax.Hub.Config(${JSON.stringify(this.auto_inline_config,null,'    ')});`;
+        },
         description() {
             localStorage['package_description'] = JSON.stringify(this.description);
         },

@@ -78,6 +78,13 @@
                             <option v-for="file in available_configs" :value="file">{{file}}</option>
                         </select>
                     </label>
+
+                    <div>
+                        <label>MathJax configuration</label>
+                        <div>
+                            <textarea v-model="inline_config"></textarea>
+                        </div>
+                    </div>
                 </p>
 
                 <p>
@@ -86,7 +93,7 @@
                     <span v-if="compile_status=='waiting'">Waiting for build to finish...</span>
                 </p>
                 <div v-if="compile_id && config && compile_status=='compiled'">
-                    <iframe :src="'/test?config='+config+'&id='+compile_id" id="test"></iframe>
+                    <iframe :src="'/test?'+test_query_string" id="test"></iframe>
                     <p>Everything looks OK? <a :href="compile_zipfile" download>Download a .zip of this build</a> (<filesize :size="compile_zip_size"></filesize>).</p>
                 </div>
             </section>

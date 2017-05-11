@@ -59,4 +59,4 @@ def mathjax(id, path):
 
 @app.route('/test')
 def test():
-    return render_template('test.html',config=request.args.get('config',''),id=request.args.get('id',''))
+    return render_template('test.html',config_file=request.args.get('config_file',''),id=request.args.get('id',''),inline_config=request.args.get('inline_config',''))

@@ -48,9 +48,8 @@ def clean_old():
         delta = (now - ctime).total_seconds()
         with open(f.path) as file:
             id = file.read()
-        print('{}: {}'.format(id,delta))
         if delta>10*60:
-            print("remove {}".format(id))
+            print("Remove old build {}".format(id))
             os.remove(f.path)
             os.remove(os.path.join('zips',helpers.zip_name(id)))
             shutil.rmtree(helpers.output_path(id))
