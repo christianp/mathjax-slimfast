@@ -25,7 +25,7 @@ def tree(path):
         else:
             if entry.name[0]!='.':
                 files.append({'name':entry.name,'size':entry.stat().st_size,'use':True})
-    return {'dirs':dirs,'files':files,'use':'all','name':os.path.split(path)[1],'space':0}
+    return {'dirs':sorted(dirs,key=lambda x:x['name']),'files':sorted(files,key=lambda x:x['name']),'use':'all','name':os.path.split(path)[1],'space':0}
 
 mathjax_files = tree('MathJax')
 
