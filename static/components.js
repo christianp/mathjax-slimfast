@@ -729,4 +729,58 @@ const config_bits = [
             }
         }
     },
+    {
+        components: ['asciimathInput'],
+        config: {
+            jax: ['input/AsciiMath']
+        }
+    },
+    {
+        components: ['mathmlInput'],
+        config: {
+            jax: ['input/MathML']
+        }
+    },
+    {
+        components: ['texInput'],
+        config: {
+            jax: ['input/TeX']
+        }
+    },
+    {
+        components: ['commonHtmlOutput'],
+        config: {
+            jax: ['output/CommonHTML']
+        }
+    },
+    {
+        components: ['htmlCssOutput'],
+        config: {
+            jax: ['output/HTML-CSS']
+        }
+    },
+    {
+        components: ['mathmlOutput'],
+        config: {
+            jax: ['output/NativeMML']
+        }
+    },
+    {
+        components: ['svgOutput'],
+        config: {
+            jax: ['output/SVG']
+        }
+    },
+    {
+        components: ['previewHtmlOutput'],
+        config: {
+            jax: ['output/PreviewHTML']
+        }
+    },
+    {
+        components: ['plainSourceOutput'],
+        config: {
+            jax: ['output/PlainSource']
+        }
+    },
 ]
