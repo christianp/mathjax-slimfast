@@ -68,6 +68,7 @@ const components = {
     },
     "fontStix": {
         "description": "STIX",
+        "help_text": "MathJax will use the STIX fonts if they're installed on the user's device.",
         "paths": {
             "fonts/HTML-CSS/STIX": ['htmlCssOutput|commonHtmlOutput'],
             "jax/output/HTML-CSS/fonts/STIX": ['htmlCssOutput|commonHtmlOutput'],
@@ -78,6 +79,7 @@ const components = {
     },
     "fontStixWeb": {
         "description": "STIX-Web",
+        "help_text": "A version of the STIX fonts compiled for the web, which can be used if the user doesn't have STIX installed on their device.",
         "paths": {
             "fonts/HTML-CSS/STIX-Web/eot": ['htmlCssOutput|commonHtmlOutput','eot'],
             "fonts/HTML-CSS/STIX-Web/otf": ['htmlCssOutput|commonHtmlOutput','otf'],
@@ -90,6 +92,7 @@ const components = {
     },
     "fontTeX": {
         "description": "TeX",
+        "help_text": "The \"standard\" TeX font.",
         "paths": {
             "fonts/HTML-CSS/TeX/eot": ['htmlCssOutput|commonHtmlOutput','eot'],
             "fonts/HTML-CSS/TeX/otf": ['htmlCssOutput|commonHtmlOutput','otf'],
@@ -553,18 +556,22 @@ const components = {
 const component_groups = [
     {
         "name": "Fonts",
+        "help_text": "Choose at least one font.",
         "components": ["fontAsana","fontGyrePagella","fontGyreTermes","fontLatinModern","fontNeoEuler","fontStix","fontStixWeb","fontTeX"]
     },
     {
         "name": "Font formats",
+        "help_text": "If you're using the HTML-CSS or Common HTML outputs, select at least one format. Otherwise, these aren't needed.",
         "components": ["woff","svg","otf","png","eot"]
     },
     {
         "name": "Input formats",
+        "help_text": "Select at least one input format.",
         "components": ["asciimathInput","mathmlInput","texInput"]
     },
     {
         "name": "Output formats",
+        "help_text": "Select at least one output format.",
         "components": ["commonHtmlOutput","htmlCssOutput","svgOutput","mathmlOutput","previewHtmlOutput","plainSourceOutput"]
     },
     {

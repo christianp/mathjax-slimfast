@@ -221,15 +221,15 @@ let app = new Vue({
     created: function() {
         const app = this;
         let data;
-        if('package_description' in localStorage) {
-            data = JSON.parse(localStorage['package_description']);
-            load_description(data,this.files);
-        }
         if('enabled_components' in localStorage) {
             data = JSON.parse(localStorage['enabled_components']);
             data.forEach(function(k) {
                 app.components[k].include = true;
             });
+        }
+        if('package_description' in localStorage) {
+            data = JSON.parse(localStorage['package_description']);
+            load_description(data,this.files);
         }
     },
     methods: {

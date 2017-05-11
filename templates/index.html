@@ -48,10 +48,12 @@
             </header>
 
             <section :class="{active:activeTab.id=='components'}">
-                <h2>Components</h2>
+                <h2>How to use this site</h2>
+                <p>Use this site to create a copy of <a href="https://mathjax.org">MathJax</a> that only contains the parts you need. Select the components you want in this section, then make any more fine-grained changes in the "refine included files" section. In the "build a package" section, you'll be able to see how your build works, and download a copy as a .zip file.</p>
                 <ul id="component-groups">
                     <li v-for="group in component_groups" class="component-group">
                         <h3>{{group.name}}</h3>
+                        <p class="help-text">{{group.help_text}}</p>
                         <ul>
                             <li v-for="component_name in group.components" class="component">
                                 <label><input type="checkbox" v-model="components[component_name].include"> {{components[component_name].description}}</label>
@@ -63,7 +65,7 @@
             </section>
 
             <section :class="{active:activeTab.id=='files'}">
-                <p>Select the files and folders to include.</p>
+                <p>Further optimise your build by including or excluding individual files and folders. Click on a filename to toggle it, and use the radio buttons to specify how much of each folder to include.</p>
                 <ul id="mathjax_files" class="folder-list">
                     <folder name="MathJax" :model="files" root="true"></folder>
                 </ul>

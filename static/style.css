@@ -104,7 +104,6 @@ nav > a:not(:last-child)::after {
 }
 
 .help-text {
-    padding-left: 2em;
     color: #666;
     display: block;
 }
@@ -117,13 +116,15 @@ nav > a:not(:last-child)::after {
 }
 .component-group {
     flex: 1 0 30%;
+    margin: 0em 1em 1em 0;
 }
 .component-group ul {
     list-style: none;
     padding-left: 1rem;
 }
-.component {
-}
 .component label {
     display: block;
+}
+.component .help-text {
+    padding-left: 2em;
 }
